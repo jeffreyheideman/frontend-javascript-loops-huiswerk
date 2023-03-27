@@ -55,7 +55,7 @@ for (let i = 0; i < 5; i++) {
 // ==========================================
 const arrow = "> "
 const doubleArrow = ">> "
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i <= 9; i++) {
     if (i < 3) {
         console.log(i)
     } else if ( i < 6) {

@@ -113,7 +113,7 @@ console.log(NOVIEmployees)
 // Lukt het je om ervoor te zorgen dat alle e-mailadressen in lowercase letters komen te staan? Dit heb je nog niet geleerd, maar google is your best friend...
 // ==========================================
 
-
+// Gelukt :)
 
 
 // ==========================================
