@@ -16,7 +16,9 @@ const scores = [
 // 66ç
 // ==========================================
 
-
+for (let i = 0; i < scores.length; i++) {
+    console.log(scores[i].score)
+}
 
 
 
@@ -31,8 +33,27 @@ const scores = [
 // A
 // D
 // ==========================================
+for (let i = 0; i < scores.length; i++) {
+    let score = scores[i].score;
+    let grade;
 
-
+    switch (true) {
+        case (score < 60):
+            grade = 'F';
+            break;
+        case (score < 70):
+            grade = 'D';
+            break;
+        case (score < 80):
+            grade = 'C';
+            break;
+        case (score < 90):
+            grade = 'B';
+            break;
+        case (score < 100):
+            grade = 'A';
+            break;
+    }
 
 
 
@@ -50,6 +71,9 @@ const scores = [
 // ==========================================
 
 
+    scores[i].grade = grade;
+}
+console.log(scores);
 
 
 
@@ -75,6 +99,11 @@ const NOVIEmployees = [
 //  ];
 // ==========================================
 
+for (let i = 0; i < NOVIEmployees.length; i++) {
+    NOVIEmployees[i].email = (NOVIEmployees[i].firstName + "." + NOVIEmployees[i].lastName + "@novi.nl").toLowerCase();
+}
+
+console.log(NOVIEmployees)
 
 
 
@@ -114,22 +143,53 @@ const students = [
     {name: 'Karima', city: 'Utrecht', zipCode: '3531', neighborhood: null},
 ];
 
-// Verwachte uitkomsten:
-// [
-//     { name: 'Mariska', city: 'Utrecht', zipCode: '3513', neighborhood: 'Pijlsweerd' },
-//     { name: 'Mehmet', city: 'Utrecht', zipCode: '3514', neighborhood: 'Vogelenbuurt' },
-//     { name: 'Dennis', city: 'Utrecht', zipCode: '3572', neighborhood: 'Vogelenbuurt' },
-//     { name: 'Robin', city: 'Utrecht', zipCode: '3581', neighborhood: 'Vogelenbuurt' },
-//     { name: 'Tanush', city: 'Utrecht', zipCode: '3512', neighborhood: 'Vogelenbuurt' },
-//     { name: 'Florien', city: 'Utrecht', zipCode: '3513', neighborhood: 'Pijlsweerd' },
-//     { name: 'Larissa', city: 'Utrecht', zipCode: '3583', neighborhood: 'Vogelenbuurt' },
-//     { name: 'Marijn', city: 'Utrecht', zipCode: '3572', neighborhood: 'Vogelenbuurt' },
-//     { name: 'Jan', city: 'Utrecht', zipCode: '3531', neighborhood: 'Vogelenbuurt' },
-//     { name: 'Laura', city: 'Utrecht', zipCode: '3531', neighborhood: 'Vogelenbuurt' },
-//     { name: 'Aicha', city: 'Utrecht', zipCode: '3514', neighborhood: 'Vogelenbuurt' },
-//     { name: 'Karima', city: 'Utrecht', zipCode: '3531', neighborhood: 'Vogelenbuurt' }
-// ]
-// ==========================================
 
+// // Verwachte uitkomsten:
+// // [
+// //     { name: 'Mariska', city: 'Utrecht', zipCode: '3513', neighborhood: 'Pijlsweerd' },
+// //     { name: 'Mehmet', city: 'Utrecht', zipCode: '3514', neighborhood: 'Vogelenbuurt' },
+// //     { name: 'Dennis', city: 'Utrecht', zipCode: '3572', neighborhood: 'Vogelenbuurt' },
+// //     { name: 'Robin', city: 'Utrecht', zipCode: '3581', neighborhood: 'Vogelenbuurt' },
+// //     { name: 'Tanush', city: 'Utrecht', zipCode: '3512', neighborhood: 'Vogelenbuurt' },
+// //     { name: 'Florien', city: 'Utrecht', zipCode: '3513', neighborhood: 'Pijlsweerd' },
+// //     { name: 'Larissa', city: 'Utrecht', zipCode: '3583', neighborhood: 'Vogelenbuurt' },
+// //     { name: 'Marijn', city: 'Utrecht', zipCode: '3572', neighborhood: 'Vogelenbuurt' },
+// //     { name: 'Jan', city: 'Utrecht', zipCode: '3531', neighborhood: 'Vogelenbuurt' },
+// //     { name: 'Laura', city: 'Utrecht', zipCode: '3531', neighborhood: 'Vogelenbuurt' },
+// //     { name: 'Aicha', city: 'Utrecht', zipCode: '3514', neighborhood: 'Vogelenbuurt' },
+// //     { name: 'Karima', city: 'Utrecht', zipCode: '3531', neighborhood: 'Vogelenbuurt' }
+// // ]
+// // ==========================================
+// // Verwachte uitkomst klopt niet :|
 
+for (let i = 0; i < students.length; i++) {
+    let zipCode = students[i].zipCode
+    let neighborhood
 
+    switch (true) {
+        case (zipCode === '3513'):
+            neighborhood = 'Pijlsweerd';
+            break;
+        case (zipCode === '3514'):
+            neighborhood = 'Vogelenbuurt';
+            break;
+        case (zipCode === '3512'):
+            neighborhood = 'Binnenstad';
+            break;
+        case (zipCode === '3531'):
+            neighborhood = 'Lombok';
+            break;
+        case (zipCode === '3572'):
+            neighborhood = 'Wittevrouwen';
+            break;
+        case (zipCode === '3581'):
+            neighborhood = 'Oudwijk';
+            break;
+        case (zipCode === '3583'):
+            neighborhood = 'Schildersbuurt';
+            break;
+    }
+    students[i].neighborhood = neighborhood
+}
+
+console.log(students)
